@@ -42,16 +42,19 @@ This repository provides step-by-step instructions for installing Arch Linux on 
 ```
 
 7. Mount the EFI partition (if applicable):
-   
+   ```
       mkdir /mnt/boot
-      mount /dev/sda2 /mnt/boot
-
+      mount /dev/sda2 /mnt/boot```
 
 ## Install the System
 
-8. Install the base system and essential packages: pacstrap /mnt base linux linux-firmware
+8. Install the base system and essential packages:
+
+``` pacstrap /mnt base linux linux-firmware```
    
-9. Generate an `fstab` file: genfstab -U /mnt >> /mnt/etc/fstab
+9. Generate an `fstab` file: 
+
+```genfstab -U /mnt >> /mnt/etc/fstab```
 
     
 ## Configure the System
