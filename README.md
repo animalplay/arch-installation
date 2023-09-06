@@ -9,17 +9,21 @@ This repository provides step-by-step instructions for installing Arch Linux on 
 1. Load the keyboard layout: loadkeys es
 
 2. Connect to your Wi-Fi network using `iwctl`. Replace `NOMBRE_DISPOSITIVO` with your device name, and `NOMBRE_ROUTER` with your router's name:
-
+```
       iwctl
       device list
       station NOMBRE_DISPOSITIVO scan
       station NOMBRE_DISPOSITIVO get-networks
       station NOMBRE_DISPOSITIVO connect NOMBRE_ROUTER
       exit
+```
+3. Verify your internet connection: 
 
-3. Verify your internet connection: ping archlinux.org
+```ping archlinux.org```
 
-4. Synchronize the system clock: timedatectl set-ntp true
+4. Synchronize the system clock: 
+
+```timedatectl set-ntp true```
 
 
 ## Create and Format Partitions
@@ -27,7 +31,7 @@ This repository provides step-by-step instructions for installing Arch Linux on 
 5. Use `cfdisk` or your preferred partitioning tool to create partitions as needed.
 
 6. Format the partitions. Replace `/dev/sda5`, `/dev/sda6`, and `/dev/sda7` with your actual partition names:
-
+```
       mkfs.ext4 /dev/sda5
       mkfs.ext4 /dev/sda6
       mkswap /dev/sda7
@@ -35,7 +39,7 @@ This repository provides step-by-step instructions for installing Arch Linux on 
       mount /dev/sda5 /mnt
       mkdir /mnt/home
       mount /dev/sda6 /mnt/home
-
+```
 
 7. Mount the EFI partition (if applicable):
    
